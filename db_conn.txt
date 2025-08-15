@@ -1,0 +1,1 @@
+docker run -d --name auth_app_db -e POSTGRES_PASSWORD=Auth_APP_admin_PSW/2025 -e POSTGRES_USER=Admin -e POSTGRES_DB=auth_app_db -p 5598:5432 postgres
