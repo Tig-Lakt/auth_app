@@ -51,17 +51,18 @@ GET /api/moscow_time - Текущее время в Москве
 http://localhost/api/moscow_time  
 
 Создать нового пользователя  
-curl -X POST "http://localhost:8000/auth/register" ^  
--H "Content-Type: application/json" ^  
--d "{\"email\":\"test@example.com\",\"username\":\"testuser\",\"password\":\"StrongPass123\"}" 
+curl -X POST "http://localhost:8000/auth/register" \  
+-H "Content-Type: application/json" \  
+-d '{"email":"test@example.com","username":"testuser","password":"StrongPass123"}'  
 
 Получить токен  
-curl -X POST "http://localhost:8000/auth/token" ^  
--H "Content-Type: application/x-www-form-urlencoded" ^  
--d "username=testuser&password=StrongPass123"  
+curl -X POST "http://localhost:8000/auth/token" \  
+-H "Content-Type: application/x-www-form-urlencoded" \  
+-d "username=testuser" \  
+-d "password=StrongPass123"  
 
 После получения токена его надо скопировать  
 
-Получение московского времени (только для авторизованных пользователей)  
-curl -X GET "http://localhost:8000/api/moscow_time" ^  
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImV4cCI6MTc1NTI2Njc0NH0.uaGmdlq6hrcyOh67lz8n7Fu1eKySGtEww7YRc4ttYUg"  
+Получение московского времени (только для авторизованных пользователей)   
+curl -X GET "http://localhost:8000/api/moscow_time" \  
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImV4cCI6MTc1NTMyODM4OX0.-jlTiXTf_IyHaNbgZdrdl1yBJL_55vdM9QTYAs-83KI"
